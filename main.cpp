@@ -59,7 +59,7 @@ int main()
             return 1;
         }
 
-        uintptr_t m_SignatureAddress = Memory::FindSignature(reinterpret_cast<uintptr_t>(m_SchemaSystemBytes), m_SchemaModule[1], "48 89 05 ? ? ? ? 4C 8D 45 D0");
+        uintptr_t m_SignatureAddress = Memory::FindSignature(reinterpret_cast<uintptr_t>(m_SchemaSystemBytes), m_SchemaModule[1], "48 8D 0D ? ? ? ? E9 ? ? ? ? CC CC CC CC 48 8D 0D ? ? ? ? E9 ? ? ? ? CC CC CC CC 48 83 EC 28");
         if (!m_SignatureAddress)
         {
             PRINT_ERROR("[ - ] Signature scan failed, outdated signature?\n");
